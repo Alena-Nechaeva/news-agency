@@ -1,0 +1,24 @@
+.hero__content {
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.hero__content-left {
+  width: 60%;
+  border: 1px solid black;
+}
+
+.hero__content-right {
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero__item-right {
+  width: 100%;
+  height: 50%;
+  border: 1px solid black;
+}
+
+.hero__img {
+  width: 100%;
+}

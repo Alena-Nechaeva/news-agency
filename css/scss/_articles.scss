@@ -1,0 +1,10 @@
+.articles-list {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.atricles-list__item {
+  width: 400px;
+  height: max-content;
+  border: 1px solid black;
+}

@@ -1,0 +1,27 @@
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.title-reset,
+.text-reset {
+  margin: 0;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 50px;
+  max-width: 1400px;
+}
