@@ -5,15 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List of articles</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/scss/style.css">
+  <title>HME News</title>
+  <link rel="stylesheet" href="css/style.css">
   <script defer type="module" src="js/main.js"></script>
 </head>
 
 <body>
-  <h1 class="visually-hidden">Country News Portal</h1>
-
   <header class="header">
     <div class="header__top">
       <div class="container ht-container">
@@ -21,13 +18,19 @@
           <a class="header__link" href="#">
             <img class="header__logo" src="img/logo-news.svg" alt="logo">
           </a>
-          <button class="btn-reset header__menu-btn">Menu</button>
+          <button class="header__menu-btn">MENU</button>
         </div>
         <div class="header__top-right">
-          <button class="btn-reset header__search-btn">
+          <button class="header__search-btn">
+            <svg class="svg-search">
+              <use xlink:href="img/sprite.svg#search"></use>
+            </svg>
             <span>Search</span>
           </button>
-          <button class="btn-reset header__sign-in">
+          <button class="header__login-btn">
+            <svg class="svg-login">
+              <use xlink:href="img/sprite.svg#per-login"></use>
+            </svg>
             <span>Sign in</span>
           </button>
         </div>
@@ -36,7 +39,7 @@
     <div class="herder__bottom">
       <div class="container">
         <nav class="header__nav">
-          <ul class="list-reset header__list flex">
+          <ul class="header__list">
             <li class="header__list-item">
               <a class="header__list-link" href="#">Top Stories</a>
             </li>
@@ -56,10 +59,10 @@
               <a class="header__list-link" href="#">Politics</a>
             </li>
             <li class="header__list-item">
-              <a class="header__list-link" href="#">Indigenous</a>
+              <a class="header__list-link" href="#">Sport</a>
             </li>
             <li class="header__list-item">
-              <button class="btn-reset header__nav-btn">More</button>
+              <button class="header__nav-btn">More</button>
             </li>
           </ul>
         </nav>
@@ -72,20 +75,20 @@
         some advertisement
       </div>
     </div>
-
   </div>
 
   <main>
+    <h1 class="visually-hidden">Country News Portal</h1>
     <section class="hero">
-      <div class="container hero__content flex"></div>
+      <div class="container hero__content"></div>
     </section>
     <section class="articles">
       <div class="container">
-        <ul class="list-reset articles-list flex"></ul>
+        <ul class="articles-list"></ul>
       </div>
       <nav class="nav">
         <div class="container">
-          <ul class="list-reset nav__list flex"></ul>
+          <ul class="nav__list"></ul>
         </div>
       </nav>
     </section>

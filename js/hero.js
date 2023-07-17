@@ -1,9 +1,10 @@
 import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
 
 const getArticlesData = async () => {
-  const parameters = new URLSearchParams(location.search);
-  const page = parameters.get('page');
-  const response = await fetch(`https://gorest.co.in/public-api/posts?page=${page === null ? 1 : page}`);
+  // const parameters = new URLSearchParams(location.search);
+  // const page = parameters.get('page');
+  // const response = await fetch(`https://gorest.co.in/public-api/posts?page=${page === null ? 1 : page}`);
+  const response = await fetch(`https://gorest.co.in/public-api/posts?page=1`);
   const result = await response.json();
   //return an object with properties
   return {
@@ -28,7 +29,7 @@ export const createHeroBlock = async () => {
   heroLeftLink.textContent = `${content.articlesData[1].title}`;
   const heroRight = document.createElement('div');
   heroRight.classList.add('hero__content-right', 'flex')
-  for (let i = 1; i < 3; i++) {
+  for (let i = 1; i < 4; i++) {
     const heroRightDiv = document.createElement('div');
     const heroRightLink = document.createElement('a');
     heroRightDiv.classList.add('hero__item-right');

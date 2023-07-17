@@ -1,6 +1,12 @@
+.hero {
+  padding-top: 60px;
+}
+
 .hero__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   gap: 30px;
-  margin-bottom: 30px;
 }
 
 .hero__content-left {

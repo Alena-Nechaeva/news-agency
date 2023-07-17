@@ -1,5 +1,13 @@
+@import '_variables';
+@import '_mixins';
+
+.header {
+  position: relative;
+}
+
 .ht-container {
-  align-items: center;
+  @extend .flex;
+  justify-content: space-between;
 }
 
 .header__logo {
@@ -8,7 +16,7 @@
 }
 
 .header__link {
-  margin-right: 40px;
+  margin-right: 15px;
 }
 
 .header__top {
@@ -16,40 +24,233 @@
 }
 
 .header__top-left {
-  align-items: center;
-}
-
-.header__top-right {
-  align-items: center;
-}
-
-.ht-container {
-  justify-content: space-between;
+  @extend .flex;
 }
 
 .herder__bottom {
   width: 100%;
   padding: 10px 0;
-  background-color: #2F5793;
+  background-color: $primary;
+}
+
+.header__nav {
+  position: relative;
 }
 
 .header__list {
-  gap: 80px;
-  justify-content: center;
-  align-items: center;
+  @extend .flex;
+  @extend .list-reset;
+
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .header__list-link {
   font-size: 16px;
   font-weight: 700;
-  line-height: 28px;
-  color: #fff;
+  line-height: 130%;
+  color: $white;
+
+  @include ui-text($white)
 }
-
-
 
 .advertisement-wrap {
   width: 100%;
   height: 300px;
   background-color: #f4f4f4;
+}
+
+.header__menu-btn {
+  @extend .btn-reset;
+
+  position: relative;
+  padding: 5px 15px;
+  padding-right: 30px;
+  border-left: 1px solid $primary;
+  font-weight: bold;
+  color: $primary;
+
+  @include arrow;
+  @include ui-main-menu-btn;
+}
+
+.header__menu-btn.open {
+  &::after {
+    transform: translate(-50%, 80%) rotate(-135deg);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.header__top-right {
+  @extend .flex;
+
+  gap: 15px;
+}
+
+.header__search-btn,
+.header__login-btn {
+  @extend .btn-reset;
+  @extend .flex;
+
+  outline: 2px solid transparent;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: $black;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  @include ui-svg-btn;
+}
+
+.header__nav-btn {
+  @extend .btn-reset;
+
+  padding: 10px;
+  outline: 2px solid $white;
+  color: $white;
+
+  @include ui-svg-btn;
+}
+
+.nav-main {
+  position: absolute;
+  width: 100%;
+  z-index: 800;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 50px 100px;
+  margin: 0;
+  background: $grey;
+  opacity: 0;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  visibility: hidden;
+}
+
+.nav-main.open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  animation: menu-right 300ms ease-in-out forwards;
+}
+
+@keyframes menu-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav-main__list {
+  @extend .list-reset;
+
+  li {
+    ul {
+      @extend .list-reset;
+    }
+  }
+}
+
+.nav-main__list {
+  display: flex;
+  align-items: flex-start;
+  gap: 15%;
+
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.nav-main__title {
+  color: $black;
+}
+
+.nav-main__inside:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.nav-main__inside-link {
+  color: $black;
+  font-size: 24px;
+  line-height: 130%;
+
+  @include ui-text($primary)
+}
+
+.nav-main__close {
+  @extend .btn-reset;
+
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  top: 10px;
+  font-size: 0;
+
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: $black;
+  }
+
+  @include ui-svg-btn;
+}
+
+.header__drop-block {
+  position: absolute;
+  right: 0;
+  display: none;
+  margin-bottom: 0;
+}
+
+.header__drop-block.is-open {
+  top: 40px;
+  display: block;
+  animation: growDown 300ms ease-in-out forwards;
+  background-color: $primary;
+  transform-origin: top center;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+
+  100% {
+    transform: scaleY(1)
+  }
+}
+
+.drop {
+  @extend .list-reset;
+}
+
+.drop__item {
+  padding: 10px;
+  border: 1px solid $white;
+  margin-bottom: -1px;
+}
+
+.drop__link {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 130%;
+  color: $white;
+
+  @include ui-text ($white);
 }

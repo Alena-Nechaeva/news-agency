@@ -1,10 +1,22 @@
+@import '_variables';
+
+.articles {
+  padding-top: 60px;
+}
+
 .articles-list {
-  gap: 10px;
-  flex-wrap: wrap;
+  @extend .list-reset;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
 .atricles-list__item {
-  width: 400px;
-  height: max-content;
-  border: 1px solid black;
+  @extend .flex;
+
+  flex-direction: column;
+  height: auto;
 }
